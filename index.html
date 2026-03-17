@@ -1,27 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Sketchbook</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Inter font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Germania+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Racing+Sans+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #DDD8C4;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: 'Datatype', sans-serif;
+            color: #474350;
+            font-size: 3rem;
+        }
+
+        h1::before,
+        h1::after {
+            content: " ☆ ";
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            color: #474350;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            margin-bottom: 30px;
+        }
+
+        .button-group a {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            background-color: #BF4342;
+            color: #DDD8C4;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 8px;
+            border-radius: 12px;
+        }
+    </style>
 </head>
 <body>
     <h1>megan's interactive sketchbook</h1>
 
-    <a href="number1/number1.html">sketch 1</a><br>
-    <a href="number2/number2.html">sketch 2</a><br>
-    <a href="number3/number3.html">sketch 3</a><br>
-    <a href="number4/number4.html">sketch 4</a><br>
-    <a href="number5/number5.html">sketch 5</a><br>
-    <a href="number6/number6.html">sketch 6</a><br>
-    <a href="number7/number7.html">sketch 7</a><br>
-    <a href="microIdeas/microIdeas.html">micro-project ideas</a><br>
-    <a href="number8/number8.html">sketch 8</a><br>
-    <a href="number9/number9.html">sketch 9</a><br>
-    <a href="progress 1/progress1.html">progress 1</a><br>
-    <a href="initial sketch 1/initialSketch1.html">initial sketch 1</a><br>
-    <a href="sketch progress 2/sketchProgress2.html">sketch progress 2</a><br>
+    <h2>sketches</h2>
+    <div class="button-group">
+        <a href="number1/number1.html">early</a>
+        <a href="number2/number2.html">frustrating</a>
+        <a href="number3/number3.html">quiet</a>
+        <a href="number4/number4.html">hustle 1</a>
+        <a href="number5/number5.html">hustle 2</a>
+        <a href="number6/number6.html">huzzah!</a>
+        <a href="number7/number7.html">plants</a>
+        <a href="number8/number8.html">giddy up! 1</a>
+        <a href="number9/number9.html">giddy up! 2</a>
+    </div>
 
-    
+    <h2>micro project</h2>
+    <div class="button-group">
+        <a href="microIdeas/microIdeas.html">ideas</a>
+        <a href="progress 1/progress1.html">progress 1</a>
+        <a href="initial sketch 1/initialSketch1.html">initial sketch</a>
+        <a href="sketch progress 2/sketchProgress2.html">progress 2</a>
+        <a href="sketch progress 3/sketchProgress3.html">micro project</a>
+    </div>
 </body>
 </html>
