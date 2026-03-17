@@ -1,6 +1,16 @@
 let circleSize = 200;
 let showMessage = false;
 let messageStartTime = 0;
+let messages = [
+    "Who are you?",
+    "Where are you?",
+    "What took you so long?",
+    "Are you ignoring me?",
+    "Is anyone there?",
+    "I need to talk to you."
+];
+
+let currentMessage = "";
 
 function setup () {
     createCanvas(windowWidth, windowHeight);
@@ -11,30 +21,31 @@ function setup () {
 function draw () {
     background(0);
 
-    // if circle fills canvas, trigger message once
-    if (!showMessage && circleSize >= max(width, height)) {
-        showMessage = true;
-        messageStartTime = millis();
-    }
 
     // if in message state
-    if (showMessage) {
-    background(255, 0, 0); // full red screen
+  if (!showMessage && circleSize >= max(width, height)) {
+    showMessage = true;
+    messageStartTime = millis();
+    currentMessage = random(messages);
+}
+
+if (showMessage) {
+    background(255, 0, 0);
 
     fill(255);
-    text("Hello?", width/2, height/2 - 20);
+    text(currentMessage, width/2, height/2 - 20);
 
-    // countdown
     let timeLeft = 10 - floor((millis() - messageStartTime) / 1000);
     text(timeLeft, width/2, height/2 + 20);
 
-    // after 10 seconds reset
     if (millis() - messageStartTime > 10000) {
         circleSize = 200;
         showMessage = false;
     }
+
     return;
 }
+
 
     // normal state
     fill(255, 0, 0);
@@ -49,10 +60,16 @@ function draw () {
 // action
 function keyPressed() {
     if (key === "]") {
-        circleSize += 60; // size increases
+        // 10% chance to reset everything
+        if (random() < 0.025) {
+            circleSize = 200;
+            showMessage = false;
+        } else {
+            circleSize += 80; // normal behavior
+        }
     }
 
     if (key === "[") {
-    circleSize = 200; // reset to initial size
-}
+        circleSize = 200; // reset to initial size
+    }
 }
