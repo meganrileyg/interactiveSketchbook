@@ -7,13 +7,21 @@ let showIntroText = true;
 let topMessage = "";
 let topMessageTimer = 0;
 
+let shakeTimer = 0;
+let shakeDuration = 150;
+let shakeAmount = 4;
+
 let messages = [
     "Who are you?",
     "Where are you?",
     "What took you so long?",
     "Are you ignoring me?",
     "Is anyone there?",
-    "I need to talk to you."
+    "I need to talk to you.",
+    "Where are you going?",
+    "Come back.",
+    "It's been too long.",
+    "Don't ignore me."
 ];
 
 let currentMessage = "";
@@ -29,9 +37,9 @@ function setup() {
 
 function draw() {
     background(0);
-    textFont("Monda"); // reinforce every frame
+    textFont("Monda");
 
-    // top instruction / status text
+    // instructions
     if (topMessage !== "" && millis() < topMessageTimer) {
         fill(255);
         noStroke();
@@ -72,7 +80,7 @@ function draw() {
         return;
     }
 
-    // draw circles (largest → smallest)
+    // draw circles 
     let allCircles = [...waves, circleSize];
     allCircles.sort((a, b) => b - a);
 
@@ -83,15 +91,28 @@ function draw() {
         ellipse(width / 2, height / 2, w, w);
     }
 
-    // center text
+    // shake effect
+    let shakeX = 0;
+    let shakeY = 0;
+
+    if (millis() < shakeTimer) {
+      let dynamicShake = map(circleSize, 200, max(width, height), 2, 12);
+
+shakeX = random(-dynamicShake, dynamicShake);
+shakeY = random(-dynamicShake, dynamicShake);
+    }
+
     noStroke();
     fill(255);
-    text("ring.", width / 2, height / 2);
+    text("ring.", width / 2 + shakeX, height / 2 + shakeY);
 }
 
 function keyPressed() {
     if (key === "]") {
         showIntroText = false;
+
+        // shake triggered
+        shakeTimer = millis() + shakeDuration;
 
         // clear top message on press
         topMessage = "";
