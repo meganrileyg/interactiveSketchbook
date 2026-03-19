@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Project</title>
 
+    <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Play:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
 
+    <style>
+        h1 {
+            text-align: center;
+            font-family: "Zen Dots", sans-serif;
+            margin-top: 20px;
+            font-size: 64px;
+        }
+    </style>
+
+<style>
+  body {
+    font-family: "Monda", sans-serif;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 64px;
+    margin: 20px 0;
+  }
+
+  #canvas-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #text-content {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+  }
+</style>
 </head>
 
- <!-- p5 core-->
-     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-
-    <!--p5 sketch-->
-    <script src="js/sketchProgress3.js"></script>
-
 <body>
+
 <h1>Hesitation</h1>
-<h2>The phone is ringing!</h2>
-<p>Click the "]" key to reach for the phone.</p>
-<p>Currently, the circle is set to expand as the "phone" rings. The main variable is the action keyPressed "]" which triggers the circle to grow.</p>
-<p>The pressure is accumulative. The circle will continue to grow as the "phone" rings, and the user continues to press the "]" key. There is a random "drop call" that triggers 2.5% of the time, causing the circle to restart, effectively delaying the user from "answering" the phone.</p>
-<p>The user must wait 10 seconds to have a "conversation" with the person on the other end of the line.</p>
-<br>
+
+<div id="canvas-container"></div>
+
+<div id="text-content">
+    <h2>The phone is ringing!</h2>
+    <p>Click the "]" key to reach for the phone.</p>
+    <p>Currently, the circle is set to expand as the "phone" rings.</p>
+    <p>The pressure is accumulative...</p>
+    <p>The user must wait 10 seconds...</p>
+</div>
+
+<!-- IMPORTANT: scripts go at the bottom -->
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+<script src="js/sketchProgress3.js"></script>
+
 </body>
-</html>
