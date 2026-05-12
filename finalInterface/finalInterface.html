@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micro Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400..700&family=Play:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Monda", sans-serif;
+      background: white;
+      color: black;
+    }
+
+    header {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 42px 20px;
+    }
+
+    header h1 {
+      font-family: "Zen Dots", sans-serif;
+      font-size: 42px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 24px 40px;
+      text-align: center;
+    }
+
+    .sketch-title {
+      display: inline-block;
+      background: red;
+      color: white;
+      font-family: "Zen Dots", sans-serif;
+      font-size: 32px;
+      padding: 24px 90px;
+      border-radius: 8px;
+      margin-bottom: 50px;
+    }
+
+   #canvas-container {
+  width: 900px;
+  height: 340px;
+  margin: 0 auto 24px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+    #canvas-container canvas {
+      display: block;
+      border-radius: 0;
+    }
+
+    #text-content {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    #text-content p {
+      margin: 6px 0;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 90px;
+      margin-top: 55px;
+    }
+
+    .nav-buttons button {
+      font-family: "Monda", sans-serif;
+      font-size: 16px;
+      background: black;
+      color: white;
+      border: 2px solid red;
+      border-radius: 8px;
+      padding: 10px 55px;
+      cursor: pointer;
+    }
+
+    .nav-buttons button:hover {
+      background: red;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>meg’s interactive sketchbook</h1>
+  </header>
+
+  <main>
+    <div class="sketch-title">hesitation</div>
+
+    <div id="canvas-container"></div>
+
+    <div id="text-content">
+      <p>Click the "]" key to reach for the phone.</p>
+      <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
+      <p>The user can hang up at any time by pressing the "[" key.</p>
+      <p>The call has a 2.5% chance of being dropped. If the call goes through, the user must wait for the 10 second</p>
+      <p>"conversation."</p>
+    </div>
+
+    <div class="nav-buttons">
+      <button>Previous Sketch</button>
+      <button>Next Sketch</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="js/finalInterface.js"></script>
+
+</body>
+</html>
