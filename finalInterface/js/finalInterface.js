@@ -27,7 +27,7 @@ let messages = [
 let currentMessage = "";
 
 function setup() {
-  let canvas = createCanvas(900, 340);
+  let canvas = createCanvas(1100, 520);
   canvas.parent("canvas-container");
 
   textAlign(CENTER, CENTER);
