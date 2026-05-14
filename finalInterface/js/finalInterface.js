@@ -49,7 +49,7 @@ function draw() {
         fill(255);
         noStroke();
         textSize(18);
-        text("Someone is trying to call you. Press ] to reach for the phone.", width / 2, 30);
+        text("Someone is trying to call you. Press ] to reach for the phone.", width / 2, 40);
     }
 
     textSize(32);

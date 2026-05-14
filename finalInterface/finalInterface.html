@@ -49,6 +49,18 @@
       margin-bottom: 50px;
     }
 
+    .sketch-title:hover {
+  animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(2px, 2px); }
+}
+
    #canvas-container {
   width: 990px;
   height: 500px;
