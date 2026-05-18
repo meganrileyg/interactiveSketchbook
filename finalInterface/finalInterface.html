@@ -18,6 +18,7 @@
     }
 
     header {
+      position: relative;
       background: black;
       color: white;
       text-align: center;
@@ -29,6 +30,29 @@
       font-size: 42px;
       margin: 0;
       letter-spacing: 2px;
+    }
+
+    .back-button {
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background: red;
+      color: black;
+
+      font-family: "Monda", sans-serif;
+      font-size: 14px;
+      text-decoration: none;
+
+      padding: 8px 16px;
+      border-radius: 6px;
+
+      transition: 0.2s;
+    }
+
+    .back-button:hover {
+      background: white;
     }
 
     main {
@@ -115,6 +139,7 @@
     }
 
     @media (max-width: 768px) {
+
       body {
         overflow-x: hidden;
       }
@@ -126,6 +151,12 @@
       header h1 {
         font-size: 21px;
         line-height: 1.2;
+      }
+
+      .back-button {
+        left: 12px;
+        font-size: 11px;
+        padding: 6px 10px;
       }
 
       main {
@@ -142,7 +173,7 @@
 
       #canvas-container {
         width: 92vw;
-        height: 72vh;
+        height: 58vh;
         max-width: 430px;
         margin: 0 auto 18px;
         background: black;
@@ -186,15 +217,24 @@
 <body>
 
   <header>
+
+    <a class="back-button"
+       href="https://meganrileyg.github.io/interactiveSketchbook/">
+       back to sketchbook
+    </a>
+
     <h1>meg’s interactive sketchbook</h1>
+
   </header>
 
   <main>
+
     <div class="sketch-title">hesitation</div>
 
     <div id="canvas-container"></div>
 
     <div id="text-content">
+
       <div class="desktop-text">
         <p>Click the "]" key to reach for the phone.</p>
         <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
@@ -207,9 +247,11 @@
         <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
         <p>The call has a 2.5% chance of being dropped. If the call goes through, wait for the 10 second "conversation."</p>
       </div>
+
     </div>
 
     <div class="nav-buttons">
+
       <button onclick="window.location.href='https://meganrileyg.github.io/interactiveSketchbook/'">
         Previous Sketch
       </button>
@@ -217,7 +259,9 @@
       <button onclick="window.location.href='https://meganrileyg.github.io/interactiveSketchbook/'">
         Next Sketch
       </button>
+
     </div>
+
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
