@@ -56,7 +56,7 @@ function draw() {
      text(
       "Someone is trying to call you.\nTap the screen to reach for the phone.",
       width / 2,
-      height / 60
+      height / 40
   );
 } else {
   text("Someone is trying to call you. Press ] to reach for the phone.", width / 2, height / 15);
