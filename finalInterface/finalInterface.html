@@ -50,31 +50,30 @@
     }
 
     .sketch-title:hover {
-  animation: shake 0.15s infinite;
-}
+      animation: shake 0.15s infinite;
+    }
 
-@keyframes shake {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-2px, 2px); }
-  50% { transform: translate(2px, -2px); }
-  75% { transform: translate(-2px, -2px); }
-  100% { transform: translate(2px, 2px); }
-}
+    @keyframes shake {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-2px, 2px); }
+      50% { transform: translate(2px, -2px); }
+      75% { transform: translate(-2px, -2px); }
+      100% { transform: translate(2px, 2px); }
+    }
 
-   #canvas-container {
-  width: 990px;
-  height: 500px;
-  margin: 0 auto 24px;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
+    #canvas-container {
+      width: 990px;
+      height: 500px;
+      margin: 0 auto 24px;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
     #canvas-container canvas {
       display: block;
-      border-radius: 0;
     }
 
     #text-content {
@@ -86,6 +85,10 @@
 
     #text-content p {
       margin: 6px 0;
+    }
+
+    .mobile-text {
+      display: none;
     }
 
     .nav-buttons {
@@ -112,75 +115,71 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
 
-  body {
-    overflow-x: hidden;
-  }
+      header {
+        padding: 18px 12px;
+      }
 
-  header {
-    padding: 20px 12px;
-  }
+      header h1 {
+        font-size: 21px;
+        line-height: 1.2;
+      }
 
-  header h1 {
-    font-size: 22px;
-    line-height: 1.2;
-  }
+      main {
+        max-width: none;
+        width: 100%;
+        padding: 18px 0 28px;
+      }
 
-  main {
-    width: 100%;
-    padding: 20px 0 30px;
-  }
+      .sketch-title {
+        font-size: 20px;
+        padding: 10px 24px;
+        margin-bottom: 18px;
+      }
 
-  .sketch-title {
-    font-size: 20px;
-    padding: 10px 24px;
-    margin-bottom: 20px;
-  }
+      #canvas-container {
+        width: 92vw;
+        height: 72vh;
+        max-width: 430px;
+        margin: 0 auto 18px;
+        background: black;
+      }
 
-  /* MOBILE CANVAS LAYOUT */
+      #canvas-container canvas {
+        width: 100% !important;
+        height: 100% !important;
+      }
 
-  #canvas-container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-    margin: 0 auto;
-  }
+      #text-content {
+        width: 86%;
+        font-size: 14px;
+        line-height: 1.45;
+      }
 
+      .desktop-text {
+        display: none;
+      }
 
-  #canvas-container canvas {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-  }
+      .mobile-text {
+        display: block;
+      }
 
-  #text-content {
-    width: 88%;
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
+      .nav-buttons {
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 28px;
+        padding: 0 24px;
+      }
 
-  #text-content p {
-    margin-bottom: 10px;
-  }
-
-  .nav-buttons {
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 28px;
-    padding: 0 20px;
-  }
-
-  .nav-buttons button {
-    width: 100%;
-    padding: 12px;
-    font-size: 15px;
-  }
+      .nav-buttons button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+      }
     }
-    
   </style>
 </head>
 
@@ -196,21 +195,29 @@
     <div id="canvas-container"></div>
 
     <div id="text-content">
-      <p>Click the "]" key to reach for the phone.</p>
-      <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
-      <p>The user can hang up at any time by pressing the "[" key.</p>
-      <p>The call has a 2.5% chance of being dropped. If the call goes through, the user must wait for the 10 second "conversation."</p>
+      <div class="desktop-text">
+        <p>Click the "]" key to reach for the phone.</p>
+        <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
+        <p>The user can hang up at any time by pressing the "[" key.</p>
+        <p>The call has a 2.5% chance of being dropped. If the call goes through, the user must wait for the 10 second "conversation."</p>
+      </div>
+
+      <div class="mobile-text">
+        <p>Tap the screen to reach for the phone.</p>
+        <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
+        <p>The call has a 2.5% chance of being dropped. If the call goes through, wait for the 10 second "conversation."</p>
+      </div>
     </div>
 
-  <div class="nav-buttons">
-  <button onclick="window.location.href='https://meganrileyg.github.io/interactiveSketchbook/'">
-    Previous Sketch
-  </button>
+    <div class="nav-buttons">
+      <button onclick="window.location.href='https://meganrileyg.github.io/interactiveSketchbook/'">
+        Previous Sketch
+      </button>
 
-  <button onclick="window.location.href='https://meganrileyg.github.io/interactiveSketchbook/'">
-    Next Sketch
-  </button>
-</div>
+      <button onclick="window.location.href='https://meganrileyg.github.io/interactiveSketchbook/'">
+        Next Sketch
+      </button>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
