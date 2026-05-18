@@ -165,7 +165,6 @@ function keyPressed() {
 function touchStarted() {
   if (isMobile) {
     reachForPhone();
-    return false;
   }
 }
 
