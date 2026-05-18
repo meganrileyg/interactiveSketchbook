@@ -29,7 +29,24 @@ let currentMessage = "";
 let isMobile = window.innerWidth <= 768;
 
 function setup() {
-  let canvas = createCanvas(1100, 520);
+  let canvasWidth;
+  let canvasHeight;
+
+  if (window.innerWidth <= 768) {
+
+    // phone-sized canvas
+    canvasWidth = min(windowWidth, 430);
+    canvasHeight = canvasWidth * 1.8;
+
+  } else {
+
+    // desktop canvas
+    canvasWidth = 1100;
+    canvasHeight = 520;
+
+  }
+
+  let canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("canvas-container");
 
   textAlign(CENTER, CENTER);
