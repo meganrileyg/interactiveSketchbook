@@ -118,39 +118,43 @@ shakeY = random(-dynamicShake, dynamicShake);
     text("ring.", width / 2 + shakeX, height / 2 + shakeY);
 }
 
-function keyPressed() {
-    if (key === "]") {
-        showIntroText = false;
+function reachForPhone() {
+  showIntroText = false;
 
-        // shake triggered
-        shakeTimer = millis() + shakeDuration;
+  shakeTimer = millis() + shakeDuration;
 
-        // clear top message on press
-        topMessage = "";
-        topMessageTimer = 0;
+  topMessage = "";
+  topMessageTimer = 0;
 
-        if (random() < 0.05) {
-            circleSize = 200;
-            showMessage = false;
-            waves = [];
+  if (random() < 0.05) {
+    circleSize = 200;
+    showMessage = false;
+    waves = [];
 
-            topMessage = "Call dropped. Try again.";
-            topMessageTimer = millis() + 3000;
-        } else {
-            waves.push(circleSize);
-            circleSize += 100;
-        }
-    }
-
-    if (key === "[") {
-        circleSize = 200;
-        waves = [];
-    }
-    function touchStarted() {
-  if (isMobile) {
-    answerPhone();
+    topMessage = "Call dropped. Try again.";
+    topMessageTimer = millis() + 3000;
+  } else {
+    waves.push(circleSize);
+    circleSize += 100;
   }
 }
+
+function keyPressed() {
+  if (key === "]") {
+    reachForPhone();
+  }
+
+  if (key === "[") {
+    circleSize = 200;
+    waves = [];
+  }
+}
+
+function touchStarted() {
+  if (isMobile) {
+    reachForPhone();
+    return false;
+  }
 }
 
 function windowResized() {
