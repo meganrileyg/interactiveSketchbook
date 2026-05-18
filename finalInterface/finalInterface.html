@@ -110,54 +110,71 @@
       background: red;
       color: white;
     }
-@media (max-width: 768px) {
+
+    @media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
   header {
-    padding: 30px 16px;
+    padding: 20px 12px;
   }
 
   header h1 {
-    font-size: 26px;
+    font-size: 22px;
+    line-height: 1.2;
   }
 
   main {
-    padding: 36px 14px 30px;
+    width: 100%;
+    padding: 20px 0 30px;
   }
 
   .sketch-title {
-    font-size: 22px;
-    padding: 12px 32px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    padding: 10px 24px;
+    margin-bottom: 20px;
   }
 
+  /* MOBILE CANVAS LAYOUT */
   #canvas-container {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 990 / 500;
-    max-width: 100%;
+    width: 100vw;
+    height: 70vh;
+    margin: 0;
+    background: black; 
   }
 
   #canvas-container canvas {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
+    object-fit: cover;
   }
 
   #text-content {
-    font-size: 15px;
-    max-width: 100%;
+    width: 88%;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #text-content p {
+    margin-bottom: 10px;
   }
 
   .nav-buttons {
     flex-direction: column;
-    gap: 18px;
-    margin-top: 36px;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 0 20px;
   }
 
   .nav-buttons button {
     width: 100%;
-    padding: 10px 20px;
+    padding: 12px;
+    font-size: 15px;
   }
 }
-
   </style>
 </head>
 
@@ -176,8 +193,7 @@
       <p>Click the "]" key to reach for the phone.</p>
       <p>The pressure is accumulative. The circles will expand and the text will shake as the phone rings.</p>
       <p>The user can hang up at any time by pressing the "[" key.</p>
-      <p>The call has a 2.5% chance of being dropped. If the call goes through, the user must wait for the 10 second</p>
-      <p>"conversation."</p>
+      <p>The call has a 2.5% chance of being dropped. If the call goes through, the user must wait for the 10 second "conversation."</p>
     </div>
 
   <div class="nav-buttons">

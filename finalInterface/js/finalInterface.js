@@ -26,6 +26,8 @@ let messages = [
 
 let currentMessage = "";
 
+let isMobile = window.innerWidth <= 768;
+
 function setup() {
   let canvas = createCanvas(1100, 520);
   canvas.parent("canvas-container");
@@ -49,7 +51,16 @@ function draw() {
         fill(255);
         noStroke();
         textSize(18);
-        text("Someone is trying to call you. Press ] to reach for the phone.", width / 2, 40);
+
+        if (isMobile) {
+     text(
+      "Someone is trying to call you.\nTap the screen to reach for the phone.",
+      width / 2,
+      height / 60
+  );
+} else {
+  text("Someone is trying to call you. Press ] to reach for the phone.", width / 2, height / 15);
+}
     }
 
     textSize(32);
@@ -135,6 +146,11 @@ function keyPressed() {
         circleSize = 200;
         waves = [];
     }
+    function touchStarted() {
+  if (isMobile) {
+    answerPhone();
+  }
+}
 }
 
 function windowResized() {
